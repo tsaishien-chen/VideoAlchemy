@@ -22,10 +22,10 @@ def process_image(image_path):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--benchmark_folder", type=str, default="../msrvtt_personalization")
-    parser.add_argument("--video_list", type=str, default="../msrvtt_personalization/subject_mode_videos.txt")
-    parser.add_argument("--prompt_list", type=str, default="../msrvtt_personalization/subject_mode_prompts.txt")
-    parser.add_argument("--word_tag_image_list", type=str, default="../msrvtt_personalization/subject_mode_word_tag_single_subject_image.txt")
+    parser.add_argument("--benchmark_folder", type=str, default="../../msrvtt_personalization")
+    parser.add_argument("--video_list", type=str, default="../../msrvtt_personalization/subject_mode_videos.txt")
+    parser.add_argument("--prompt_list", type=str, default="../../msrvtt_personalization/subject_mode_prompts.txt")
+    parser.add_argument("--word_tag_image_list", type=str, default="../../msrvtt_personalization/subject_mode_word_tag_single_subject_image.txt")
     parser.add_argument("--input_data_folder", type=str, default="msrvtt_personalization_subject_mode/inputs")
     args = parser.parse_args()
 
