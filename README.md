@@ -147,7 +147,7 @@ curl 'https://my.microsoftpersonalcontent.com/personal/4a83b6b633b029cc/_layouts
 - Download [YOLOv9 face detection](https://github.com/spacewalk01/yolov9-face-detection) checkpoint
 ```
 cd ../YOLOv9
-mkdir weights; cd weights
+mkdir weight; cd weight
 # Manually download
 # https://drive.google.com/file/d/15K4e08lcZiiQrXmdsnm2BhcoNS3MOMmx/view
 ```
