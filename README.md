@@ -173,11 +173,12 @@ curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.s
 sudo apt-get install git-lfs
 git lfs install
 
+mkdir pretrained_models
 git clone https://huggingface.co/yumingj/VideoBooth_models
-mv VideoBooth_models pretrained_models
+mv VideoBooth_models pretrained_models/VideoBooth_models
 
-git clone git clone https://humsrvtt-personalizationggingface.co/CompVis/stable-diffusion-v1-4
-mv stable-diffusion-v1-4 pretrained_models
+git clone https://humsrvtt-personalizationggingface.co/CompVis/stable-diffusion-v1-4
+mv stable-diffusion-v1-4 pretrained_models/stable-diffusion-v1-4
 ```
 
 <a name="step3"></a>
