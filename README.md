@@ -153,7 +153,8 @@ mkdir weight; cd weight
 ```
 - Download [Grounded-SAM](https://github.com/IDEA-Research/Grounded-Segment-Anything) checkpoints
 ```
-cd ../../Grounded-Segment-Anything/checkpoints
+cd ../../Grounded-Segment-Anything
+mkdir checkpoints; cd checkpoints
 wget https://github.com/IDEA-Research/GroundingDINO/releases/download/v0.1.0-alpha/groundingdino_swint_ogc.pth
 wget https://dl.fbaipublicfiles.com/segment_anything/sam_vit_b_01ec64.pth
 ```
