@@ -6,7 +6,7 @@ import argparse
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--output_video_folder", type=str, default="msrvtt_personalization_subject_mode/outputs")
-    parser.add_argument("--benchmark_embeddings_folder", type=str, default="../msrvtt_personalization/msrvtt_personalization_embeddings")
+    parser.add_argument("--benchmark_embeddings_folder", type=str, default="../../msrvtt_personalization/msrvtt_personalization_embeddings")
     args = parser.parse_args()
     
     videos = sorted(glob.glob(os.path.join(args.output_video_folder, "*.mp4")))
