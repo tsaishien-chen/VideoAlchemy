@@ -198,7 +198,7 @@ conda env create -f environment.yml
 ### Step 4: Prepare *MSRVTT-Personalization* dataset
 - Parse the conditional text and images
   - The files will be stored in the folder `msrvtt_personalization_data` by default.
-  - This step includes the prediction of background images that takes around 1 hour on a single 80GB A100 gpu.
+  - This step is slow as it includes the prediction of background images. It takes around 3 hours on a single 80GB A100 gpu.
 ```
 conda activate msrvtt-personalization
 cd ../../msrvtt_personalization
