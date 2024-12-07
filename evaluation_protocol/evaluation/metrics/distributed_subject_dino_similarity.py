@@ -16,10 +16,10 @@ from sklearn.metrics.pairwise import cosine_similarity
 from utils.tensors.tensor_folder import TensorFolder
 
 sys.path.append("../models/Grounded-Segment-Anything")
-import GroundingDINO.groundingdino.datasets.transforms as T
-from GroundingDINO.groundingdino.models import build_model
-from GroundingDINO.groundingdino.util.slconfig import SLConfig
-from GroundingDINO.groundingdino.util.utils import clean_state_dict, get_phrases_from_posmap
+import groundingdino.datasets.transforms as T
+from groundingdino.models import build_model
+from groundingdino.util.slconfig import SLConfig
+from groundingdino.util.utils import clean_state_dict, get_phrases_from_posmap
 from segment_anything import (
     sam_model_registry,
     sam_hq_model_registry,

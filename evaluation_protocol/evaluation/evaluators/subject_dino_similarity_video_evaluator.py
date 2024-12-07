@@ -66,7 +66,7 @@ class SubjectDinoSimilarityVideoEvaluator():
         # Gets the inception backbone from which to compute the features
         distributed_similarity = DistributedSubjectDinoSimilarity(
             grounding_config = {
-                "config": "../models/Grounded-Segment-Anything/GroundingDINO/groundingdino/config/GroundingDINO_SwinT_OGC.py",
+                "config": "../models/Grounded-Segment-Anything/groundingdino/config/GroundingDINO_SwinT_OGC.py",
                 "checkpoint": "../models/Grounded-Segment-Anything/checkpoints/groundingdino_swint_ogc.pth",
                 "box_threshold": 0.4
             },
