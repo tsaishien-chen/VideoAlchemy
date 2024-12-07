@@ -61,7 +61,6 @@ if __name__ == "__main__":
         torch_dtype=torch.float16,
     )
     inpainting_model = inpainting_model.to("cuda")
-    inpainting_model.unet = torch.compile(inpainting_model.unet, mode="reduce-overhead", fullgraph=True)
     inpainting_model.set_progress_bar_config(disable=True)
 
     # process video
