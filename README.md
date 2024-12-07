@@ -175,10 +175,10 @@ git lfs install
 
 mkdir pretrained_models
 git clone https://huggingface.co/yumingj/VideoBooth_models
-mv VideoBooth_models pretrained_models/VideoBooth_models
+mv VideoBooth_models pretrained_models
 
 git clone https://humsrvtt-personalizationggingface.co/CompVis/stable-diffusion-v1-4
-mv stable-diffusion-v1-4 pretrained_models/stable-diffusion-v1-4
+mv stable-diffusion-v1-4 pretrained_models
 ```
 
 <a name="step3"></a>
