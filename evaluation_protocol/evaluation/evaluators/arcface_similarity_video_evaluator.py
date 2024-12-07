@@ -66,7 +66,7 @@ class ArcfaceSimilarityVideoEvaluator():
         # Gets the inception backbone from which to compute the features
         distributed_similarity = DistributedArcfaceSimilarity(
             yolov9_config = {
-                "weights": "../models/YOLOv9/weights/yolov9-c-face.pt",
+                "weights": "../models/YOLOv9/weight/best.pt",
                 "class_data": "../models/YOLOv9/data/coco.yaml"
             },
             arcface_config = {
