@@ -123,6 +123,7 @@ dependencies:
     - mpmath==1.2.1
     - multiprocessing-logging==0.3.4
     - oauthlib==3.2.2
+    - omegaconf==2.3.0
     - packaging==23.1
     - pandas==2.0.0
     - protobuf==4.22.3
