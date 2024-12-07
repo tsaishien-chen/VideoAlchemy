@@ -150,7 +150,6 @@ cd ../YOLOv9
 mkdir weights; cd weights
 # Manually download
 # https://drive.google.com/file/d/15K4e08lcZiiQrXmdsnm2BhcoNS3MOMmx/view
-mv best.ckpt yolov9-c-face.pt
 ```
 - Download [Grounded-SAM](https://github.com/IDEA-Research/Grounded-Segment-Anything) checkpoints
 ```
