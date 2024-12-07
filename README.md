@@ -177,7 +177,7 @@ mkdir pretrained_models
 git clone https://huggingface.co/yumingj/VideoBooth_models
 mv VideoBooth_models pretrained_models
 
-git clone https://humsrvtt-personalizationggingface.co/CompVis/stable-diffusion-v1-4
+git clone https://huggingface.co/CompVis/stable-diffusion-v1-4
 mv stable-diffusion-v1-4 pretrained_models
 ```
 
