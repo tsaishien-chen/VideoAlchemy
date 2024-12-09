@@ -244,7 +244,6 @@ python -m msrvtt_personalization_subject_mode.collect_groundtruth_embeddings
   - Modify `evaluation_config` to select the evaluation metrics you want to include.
   - The evaluation results will be stored in a json file under the same folder as `video_folder`.
 ```
-conda activate msrvtt-personalization
 cd ../../evaluation_protocol
 python -m torch.distributed.run --nproc_per_node=$num_gpus -m scripts.evaluate_distributed
   --evaluation_config /path/to/evaluation_config
