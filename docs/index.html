@@ -1,0 +1,613 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="./assets/index.css">
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.2/css/bootstrap.min.css'>
+	<link rel="stylesheet" href="./assets/bootstrap.min.css">
+	<title>VideoAlchemy</title>
+</head>
+	
+<body data-new-gr-c-s-check-loaded="14.1110.0" data-gr-ext-installed="">
+	<div id="VideoAlchemy" class="jumbotron text-center pb-2container" style="background-image: url('./data/background_smoke.jpg'); background-size: cover; background-position: 0% 5%;">
+		<br><br><br>
+		<p style="font-size: min(5.2rem, 10vw); margin-bottom: -10px; text-shadow: 0px 0px 10px #000;">⚗️ VideoAlchemy</p>
+		<p class="responsive-text-title" style="font-size: 2rem; text-shadow: 0px 0px 10px #000;">Open-set Personalization in Video Generation</p>
+		<br>
+		<a href="https://tsaishien-chen.github.io/" class="responsive-text-context" style="color: white !important;"><b>Tsai-Shien Chen</b></a>,
+		<a href="https://aliaksandrsiarohin.github.io/aliaksandr-siarohin-website/" class="responsive-text-context" style="color: white !important;"><b>Aliaksandr Siarohin</b></a>,
+		<a href="https://www.willimenapace.com/" class="responsive-text-context" style="color: white !important;"><b>Willi Menapace</b></a>,
+		<a href="https://yuwfan.github.io/" class="responsive-text-context" style="color: white !important;"><b>Yuwei Fang</b></a>,
+		<a href="https://www.linkedin.com/in/kwotsin/" class="responsive-text-context" style="color: white !important;"><b>Kwot Sin Lee</b></a>,
+		<a href="https://skor.sh/" class="responsive-text-context" style="color: white !important;"><b>Ivan Skorokhodov</b></a>,
+		<br>
+		<a href="https://kfiraberman.github.io/" class="responsive-text-context" style="color: white !important;"><b>Kfir Aberman</b></a>,
+		<a href="https://www.cs.cmu.edu/~junyanz/" class="responsive-text-context" style="color: white !important;"><b>Jun-Yan Zhu</b></a>,
+		<a href="https://faculty.ucmerced.edu/mhyang/" class="responsive-text-context" style="color: white !important;"><b>Ming-Hsuan Yang</b></a>,
+		<a href="http://www.stulyakov.com/" class="responsive-text-context" style="color: white !important;"><b>Sergey Tulyakov</b></a>
+		<br><br>
+		<a href="https://research.snap.com/team/creative-vision"><img class="paper-btn" src="./data/logo_snap.svg" style="height: 80px; width: auto; background-color: #000;"></a>
+		<a href="https://www.ucmerced.edu/"><img class="paper-btn" src="./data/logo_ucmerced.svg" style="height: 80px; width: auto; background-color: #000;"></a>
+		<a href="https://www.cmu.edu/"><img class="paper-btn" src="./data/logo_cmu.svg" style="height: 80px; width: auto; background-color: #000;"></a>
+		<br><br>
+		<div class="paper-btn-parent">
+			<a class="paper-btn" style="width: 180px" href="https://arxiv.org/abs/2402.19479">Read research paper</a>
+			<a class="paper-btn" style="width: 80px" href="https://github.com/snap-research/VideoAlchemy">Github</a>
+			<a class="paper-btn" style="width: 200px" href="./more_comparisons.html">View more comparisons</a>
+		</div>
+	</div>
+	<div class="container text-center">
+		<p class="responsive-text-title"><em>VideoAlchemy</em> personalizes video generation</p>
+		<p class="responsive-text-context" style="margin-top: 15px; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto;">
+			Given a text prompt and a set of images conceptualizing each entity word in the prompt, <em>VideoAlchemy</em> generates the video conditional on both text and image inputs.
+		</p>
+		<div id="video-wrapper" style="position: relative; width: 100%; height: 0; padding-bottom: 56.25%; background: #2f2f30;">
+			<video id="video-id" src="./data/samples/ablate_background/1_sea_ice.mp4" playsinline autoplay loop muted style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 2vmin; background: #2f2f30";></video>
+		</div>
+		<div id="text-id" class="responsive-text-prompt" style="font-family: Chalkduster; margin-top:10px; margin-bottom:20px;">
+			"A <span style="color:#3e76d9">man</span> pets a <span style="color:#68a74d">dog</span> on <span style="color:#efc235">sea ice</span>."
+		</div>
+		<div id="carouselExampleCaptions-1" class="carousel slide" data-ride="carousel">
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<div style="display: flex; align-items: center; justify-content: space-between; align-items: center;">
+						<a class="responsive-text-prompt custom-button" href="#carouselExampleCaptions-1" role="button" data-slide="prev" style="display: flex;">
+							<img src="./data/arrow-right.svg" style="width: min(50px, 5vw); height: min(50px, 5vw); transform: rotate(180deg);">
+							<div style="text-align: left; margin-left: 2%; margin-top: 5px; font-family: Chalkduster;">Switch<br><span style="color:#efc235">background</span></div>
+						</a>
+						<div id="image-set-1" class="image-set">
+							<img src="./data/samples/ablate_person/0_no_image.svg" data-set="1" data-index="1" onclick="selectImage(this)">
+							<img src="./data/samples/ablate_person/1_yoshua_bengio.svg" data-set="1" data-index="2" onclick="selectImage(this)" class="selected">
+							<img src="./data/samples/ablate_person/2_geoffrey_hinton.svg" data-set="1" data-index="3" onclick="selectImage(this)">
+							<img src="./data/samples/ablate_person/3_yann_lecun.svg" data-set="1" data-index="4" onclick="selectImage(this)">
+							<img src="./data/samples/ablate_person/4_sora.svg" data-set="1" data-index="5" onclick="selectImage(this)">
+							<img src="./data/samples/ablate_person/5_dalle.svg" data-set="1" data-index="6" onclick="selectImage(this)">
+						</div>
+						<a class="responsive-text-prompt custom-button" href="#carouselExampleCaptions-1" role="button" data-slide="next" style="display: flex;">
+							<div style="text-align: right; margin-right: 2%; margin-top: 5px; font-family: Chalkduster;">Switch<br><span style="color:#68a74d">dog</span></div>
+							<img src="./data/arrow-right.svg" style="width: min(50px, 5vw); height: min(50px, 5vw);">
+						</a>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<div style="display: flex; align-items: center; justify-content: space-between; align-items: center;">
+						<a class="responsive-text-prompt custom-button" href="#carouselExampleCaptions-1" role="button" data-slide="prev" style="display: flex;">
+							<img src="./data/arrow-right.svg" style="width: min(50px, 5vw); height: min(50px, 5vw); transform: rotate(180deg);">
+							<div style="text-align: left; margin-left: 2%; margin-top: 5px; font-family: Chalkduster;">Switch<br><span style="color:#3e76d9">person</span></div>
+						</a>
+						<div id="image-set-2" class="image-set">
+							<img src="./data/samples/ablate_dog/0_no_image.svg" data-set="2" data-index="1" onclick="selectImage(this)">
+							<img src="./data/samples/ablate_dog/1_shiba_inu.svg" data-set="2" data-index="2" onclick="selectImage(this)" class="selected">
+							<img src="./data/samples/ablate_dog/2_golden_retriever.svg" data-set="2" data-index="3" onclick="selectImage(this)">
+							<img src="./data/samples/ablate_dog/3_german_shepherd.png" data-set="2" data-index="4" onclick="selectImage(this)">
+							<img src="./data/samples/ablate_dog/4_husky.svg" data-set="2" data-index="5" onclick="selectImage(this)">
+							<img src="./data/samples/ablate_dog/5_samoyed.png" data-set="2" data-index="6" onclick="selectImage(this)">
+						</div>
+						<a class="responsive-text-prompt custom-button" href="#carouselExampleCaptions-1" role="button" data-slide="next" style="display: flex;">
+							<div style="text-align: right; margin-right: 2%; margin-top: 5px; font-family: Chalkduster;">Switch<br><span style="color:#efc235">background</span></div>
+							<img src="./data/arrow-right.svg" style="width: min(50px, 5vw); height: min(50px, 5vw);">
+						</a>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<div style="display: flex; align-items: center; justify-content: space-between; align-items: center;">
+						<a class="responsive-text-prompt custom-button" href="#carouselExampleCaptions-1" role="button" data-slide="prev" style="display: flex;">
+							<img src="./data/arrow-right.svg" style="width: min(50px, 5vw); height: min(50px, 5vw); transform: rotate(180deg);">
+							<div style="text-align: left; margin-left: 2%; margin-top: 5px; font-family: Chalkduster;">Switch<br><span style="color:#68a74d">dog</span></div>
+						</a>
+						<div id="image-set-3" class="image-set">
+							<img src="./data/samples/ablate_background/0_no_image.svg" data-set="3" data-index="1" onclick="selectImage(this)">
+							<img src="./data/samples/ablate_background/1_sea_ice.svg" data-set="3" data-index="2" onclick="selectImage(this)" class="selected">
+							<img src="./data/samples/ablate_background/2_beach.svg" data-set="3" data-index="3" onclick="selectImage(this)">
+							<img src="./data/samples/ablate_background/3_london.svg" data-set="3" data-index="4" onclick="selectImage(this)">
+							<img src="./data/samples/ablate_background/4_desert.svg" data-set="3" data-index="5" onclick="selectImage(this)">
+							<img src="./data/samples/ablate_background/5_moon_surface.svg" data-set="3" data-index="6" onclick="selectImage(this)">
+						</div>
+						<a class="responsive-text-prompt custom-button" href="#carouselExampleCaptions-1" role="button" data-slide="next" style="display: flex;">
+							<div style="text-align: right; margin-right: 2%; margin-top: 5px; font-family: Chalkduster;">Switch<br><span style="color:#3e76d9">person</span></div>
+							<img src="./data/arrow-right.svg" style="width: min(50px, 5vw); height: min(50px, 5vw);">
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<p class="responsive-text-footnote" style="margin-top: 20px; margin-bottom: 50px; text-align: center;">
+			*Click the images to switch different conditional images. Click the left and right buttons to switch the images of different conditional subjects: <em>person</em>, <em>dog</em>, or <em>background</em>.
+		</p>
+	</div>
+
+	<hr class="mt-5">
+
+	<div class="container text-center" style="margin-top: 50px">
+		<p class="responsive-text-title"><em>VideoAlchemy</em> supports multi-subject and open-set personalization</p>
+		<p class="responsive-text-context" style="margin-top: 15px; max-width: 750px; margin-left: auto; margin-right: auto;">
+			<em>VideoAlchemy</em> is equipped with built-in multi-subject, open-set personalization capabilities for both foreground objects and background, eliminating the need for test-time optimization.
+		</p>
+	</div>
+	<div id="carouselExampleCaptions" class="carousel slide show-neighbors" data-ride="carousel" data-interval="false">
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<div class="item__third">
+					<div id="video-wrapper" style="position: relative; width: 100%; height: 0; padding-bottom: 56.25%; background: #2f2f30;">
+						<video id="video-set-1" src="./data/samples/multi_subject_dinosaur/3_conditions.mp4" playsinline autoplay loop muted style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 2vmin; background: #2f2f30"></video>
+					</div>
+					<div id="text-prompt-set-1" class="responsive-text-prompt" style="font-family: Chalkduster; color: white; margin-top:10px; margin-bottom:10px;">
+						"A <span style="color:#3e76d9">woman</span> rides a <span style="color:#68a74d">dinosaur</span> on a <span style="color:#efc235">field</span>."
+					</div>
+					<div class="block-container mobile-break" style="align-items: center;">
+						<img src="./data/arrow-increase.svg" class="custom-button" style="width: min(240px, 24vw);" onclick="changeCondition(1, 1);">
+						<div id="text-condition-set-1" class="responsive-text-context">3 conditional subjects</div>
+						<img src="./data/arrow-decrease.svg" class="custom-button" style="width: min(240px, 24vw);" onclick="changeCondition(1, -1);">
+					</div>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<div class="item__third">
+					<div id="video-wrapper" style="position: relative; width: 100%; height: 0; padding-bottom: 56.25%; background: #2f2f30;">
+						<video id="video-set-2" src="./data/samples/multi_subject_discuss/3_conditions.mp4" playsinline autoplay loop muted style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 2vmin; background: #2f2f30"></video>
+					</div>
+					<div id="text-prompt-set-2" class="responsive-text-prompt" style="font-family: Chalkduster; color: white; margin-top:10px; margin-bottom:10px;">
+						"A <span style="color:#3e76d9">man</span> and a <span style="color:#68a74d">woman</span> discuss something in a <span style="color:#efc235">meeting room</span>."
+					</div>
+					<div class="block-container mobile-break" style="align-items: center;">
+						<img src="./data/arrow-increase.svg" class="custom-button" style="width: min(240px, 24vw);" onclick="changeCondition(2, 1);">
+						<div id="text-condition-set-2" class="responsive-text-context">3 conditional subjects</div>
+						<img src="./data/arrow-decrease.svg" class="custom-button" style="width: min(240px, 24vw);" onclick="changeCondition(2, -1);">
+					</div>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<div class="item__third">
+					<div id="video-wrapper" style="position: relative; width: 100%; height: 0; padding-bottom: 56.25%; background: #2f2f30;">
+						<video id="video-set-3" src="./data/samples/multi_subject_drink_tea/3_conditions.mp4" playsinline autoplay loop muted style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 2vmin; background: #2f2f30"></video>
+					</div>
+					<div id="text-prompt-set-3" class="responsive-text-prompt" style="font-family: Chalkduster; color: white; margin-top:10px; margin-bottom:10px;">
+						"A <span style="color:#3e76d9">woman</span> in a <span style="color:#68a74d">suit</span> sits in a <span style="color:#efc235">living room</span> and drinks tea."
+					</div>
+					<div class="block-container mobile-break" style="align-items: center;">
+						<img src="./data/arrow-increase.svg" class="custom-button" style="width: min(240px, 24vw);" onclick="changeCondition(3, 1);">
+						<div id="text-condition-set-3" class="responsive-text-context">3 conditional subjects</div>
+						<img src="./data/arrow-decrease.svg" class="custom-button" style="width: min(240px, 24vw);" onclick="changeCondition(3, -1);">
+					</div>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<div class="item__third">
+					<div id="video-wrapper" style="position: relative; width: 100%; height: 0; padding-bottom: 56.25%; background: #2f2f30;">
+						<video id="video-set-4" src="./data/samples/multi_subject_rocket/3_conditions.mp4" playsinline autoplay loop muted style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 2vmin; background: #2f2f30"></video>
+					</div>
+					<div id="text-prompt-set-4" class="responsive-text-prompt" style="font-family: Chalkduster; color: white; margin-top:10px; margin-bottom:10px;">
+						"A <span style="color:#3e76d9">rocket</span> launches from the <span style="color:#efc235">Moon’s surface</span> with a <span style="color:#68a74d">UFO</span> behind."
+					</div>
+					<div class="block-container mobile-break" style="align-items: center;">
+						<img src="./data/arrow-increase.svg" class="custom-button" style="width: min(240px, 24vw);" onclick="changeCondition(4, 1);">
+						<div id="text-condition-set-4" class="responsive-text-context">3 conditional subjects</div>
+						<img src="./data/arrow-decrease.svg" class="custom-button" style="width: min(240px, 24vw);" onclick="changeCondition(4, -1);">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true" style="background-image: url('./data/arrow-right.svg'); width: 50px; height: 50px; transform: rotate(180deg)"></span>
+			<span class="sr-only">Previous</span>
+		</a>
+		<a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true" style="background-image: url('./data/arrow-right.svg'); width: 50px; height: 50px;"></span>
+			<span class="sr-only">Next</span>
+		</a>
+		<p class="responsive-text-footnote" style="margin-top: 5px; margin-bottom: 50px; text-align: center;">
+			*Click the up and down buttons to check the generated videos with different numbers of conditional subjects.
+		</p>
+	</div>
+
+	<hr class="mt-5">
+
+	<div class="container text-center" style="margin-top: 50px">
+		<p class="responsive-text-title"><em>VideoAlchemy</em> is the state-of-the-art personalization model</p>
+		<p class="responsive-text-context" style="margin-top: 15px; margin-bottom: 30px; max-width: 725px; margin-left: auto; margin-right: auto;">
+			Compared to the existing personalization models, <em>VideoAlchemy</em> can generate videos with the best text alignment, the highest subject fidelity, and the greatest dynamic degree<sup>&dagger;</sup>.
+		</p>
+		<div class="block-container" style="margin-bottom: 10px; gap: 6px;">
+			<img src="./data/samples/msrvtt_horse/inputs.svg" style="width: 100%;">
+			<div style="width: 15.9%; min-width: 106px;">
+				<video src="./data/samples/msrvtt_horse/0_ELITE.mp4" loop playsinline autoPlay muted style="width: 100%; border-radius: 1vmin;"></video>
+				<p class="responsive-text-context">ELITE</p>
+			</div>
+			<div style="width: 15.9%; min-width: 106px;">
+				<video src="./data/samples/msrvtt_horse/1_VideoBooth.mp4" loop playsinline autoPlay muted style="width: 100%; border-radius: 1vmin;"></video>
+				<p class="responsive-text-context">VideoBooth</p>
+			</div>
+			<div style="width: 15.9%; min-width: 106px;">
+				<video src="./data/samples/msrvtt_horse/2_DreamVideo.mp4" loop playsinline autoPlay muted style="width: 100%; border-radius: 1vmin;"></video>
+				<p class="responsive-text-context">DreamVideo</p>
+			</div>
+			<div style="width: 28.25%; min-width: 188.3px;">
+				<video src="./data/samples/msrvtt_horse/3_VideoAlchemy.mp4" loop playsinline autoPlay muted style="width: 100%; border-radius: 1vmin;"></video>
+				<p class="responsive-text-context"><em>VideoAlchemy</em></p>
+			</div>
+			<div style="width: 21.2%; min-width: 141.3px;">
+				<video src="./data/samples/msrvtt_horse/4_Ground_Truth.mp4" loop playsinline autoPlay muted style="width: 100%; border-radius: 1vmin;"></video>
+				<p class="responsive-text-context">Ground Truth</p>
+			</div>
+		</div>
+		<div class="block-container" style="margin-bottom: 10px; gap: 6px;">
+			<img src="./data/samples/msrvtt_face_27/inputs.svg" style="width: 100%;">
+			<div style="width: 23.62%; min-width: 157.5px;">
+				<video src="./data/samples/msrvtt_face_27/0_IP-Adapter.mp4" loop playsinline autoPlay muted style="width: 100%; border-radius: 1vmin;"></video>
+				<p class="responsive-text-context">IP-Adapter</p>
+			</div>
+			<div style="width: 13.3%; min-width: 88.67px;">
+				<video src="./data/samples/msrvtt_face_27/1_PhotoMaker.mp4" loop playsinline autoPlay muted style="width: 100%; border-radius: 1vmin;"></video>
+				<p class="responsive-text-context">PhotoMaker</p>
+			</div>
+			<div style="width: 13.3%; min-width: 88.67px;">
+				<video src="./data/samples/msrvtt_face_27/2_Magic-Me.mp4" loop playsinline autoPlay muted style="width: 100%; border-radius: 1vmin;"></video>
+				<p class="responsive-text-context">Magic-Me</p>
+			</div>
+			<div style="width: 23.62%; min-width: 157.5px;">
+				<video src="./data/samples/msrvtt_face_27/3_VideoAlchemy.mp4" loop playsinline autoPlay muted style="width: 100%; border-radius: 1vmin;"></video>
+				<p class="responsive-text-context"><em>VideoAlchemy</em></p>
+			</div>
+			<div style="width: 23.62%; min-width: 157.5px;">
+				<video src="./data/samples/msrvtt_face_27/4_Ground_Truth.mp4" loop playsinline autoPlay muted style="width: 100%; border-radius: 1vmin;"></video>
+				<p class="responsive-text-context">Ground Truth</p>
+			</div>
+		</div>
+		<div style="display: flex; justify-content: space-around; flex-wrap: wrap;">
+			<a class="paper-btn" style="width: 200px" href="./more_comparisons.html">View more comparisons</a>
+		</div>
+		<p class="responsive-text-footnote" style="margin-top: 25px; margin-bottom: 50px; text-align: center;">
+			<sup>&dagger;</sup>According to the evaluation on the proposed benchmark <em>MSRVTT-Personalization</em>. Check the following section or the research paper for more details.
+		</p>
+	</div>
+
+	<hr class="mt-5">
+
+	<div class="container text-center" style="margin-top: 50px">
+		<p class="responsive-text-title">How we make <em>VideoAlchemy</em> work?</p>
+		<p class="responsive-text-context" style="margin-top: 15px; margin-bottom: 15px; max-width: 980px; margin-left: auto; margin-right: auto;">
+			To achieve multi-subject and open-set personalization, we design a dataset construction pipeline, including the retrieval of the entity words and the preparation of subject and background images.
+			To mitigate the issue of "<em>copy-and-paste</em>" effect, we collect subject images from multiple frames and introduce training-time image augmentations.
+		</p>
+		<video src="./data/video_dataset_collection.mp4" playsinline autoplay loop muted controls style="width: 100%; border-radius: 2vmin; background: #2f2f30"></video>
+		<p class="responsive-text-context" style="margin-top: 30px; margin-bottom: 15px; max-width: 850px; margin-left: auto; margin-right: auto;">
+			<em>VideoAlchemy</em> is built on new Diffusion Transformer modules with additional cross-attention layer for personalization conditioning.
+			To achieve multi-subject conditioning, we introduce a subject-level fusion, binding the word description of each subject with its image representations. 
+		</p>
+		<video src="./data/video_architecture.mp4" playsinline autoplay loop muted controls style="width: 75%; border-radius: 2vmin; background: #2f2f30"></video>
+		<div style="display: flex; justify-content: space-around; flex-wrap: wrap; margin-top: 30px;">
+			<a class="paper-btn" style="width: 180px; margin-bottom: 50px;" href="https://arxiv.org/abs/2402.19479">Read research paper</a>
+		</div>
+	</div>
+
+	<hr class="mt-5">
+
+	<div class="container text-center" style="margin-top: 50px">
+		<p class="responsive-text-title"><em>MSRVTT-Personalization</em>: a new benchmark of personalization</p>
+		<p class="responsive-text-context" style="margin-top: 15px; margin-bottom: 30px; max-width: 1000px; margin-left: auto; margin-right: auto;">
+			To evaluate <em>VideoAlchemy</em>, we introduce <em>MSRVTT-Personalization</em> aiming at accurate subject fidelity assessment and supporting various conditioning modes, including conditioning on face crops, conditioning on single or multiple arbitrary subjects, and conditioning on foreground objects and background. We show a test sample in <em>MSRVTT-Personalization</em> below.
+		</p>
+		<div class="block-container" style="flex-wrap: none; gap: .5%; margin-bottom: 5px;">
+			<div style="width: 29%;">
+				<video src="./data/samples/msrvtt_sample/video.mp4" loop playsinline autoPlay muted style="width: 100%; border-radius: 1vmin;"></video>
+				<p class="responsive-text-context">Ground Truth Video</p>
+			</div>
+			<div style="width: 48%;">
+				<img src="./data/samples/msrvtt_sample/annotation.png" style="width: 100%;">
+				<p class="responsive-text-context">Personalization Annotations</p>
+			</div>
+			<div style="width: 19.1%;">
+				<img src="./data/samples/msrvtt_sample/metrics.svg" style="width: 100%;">
+				<p class="responsive-text-context">Evaluation Metrics</p>
+			</div>
+		</div>
+		<div style="display: flex; justify-content: space-around; flex-wrap: wrap;">
+			<a class="paper-btn" style="width: 230px; margin-bottom: 50px;" href="https://github.com/snap-research/VideoAlchemy">Code of evaluation protocol</a>
+		</div>
+	</div>
+
+	<hr class="mt-5">
+
+	<div class="container text-center" style="margin-top: 50px">
+		<p class="responsive-text-title">Ablation study</p>
+		<p class="responsive-text-context" style="margin-top: 15px; margin-bottom: 30px;">
+			<em>VideoAlchemy</em> can  achieve better subject fidelity using DINOv2 as the encoder than CLIP <sup>[1]</sup>, <br>
+			can correctly bind the conditional image and entity word with the usage of word tokens <sup>[2]</sup>, <br>
+			and can mitigate the <em>copy-and-paste</em> effect and synthesize text-aligned videos via the proposed image augmentations <sup>[3]</sup>.
+		</p>
+		<div class="block-container" style="margin-bottom: 30px; gap: 6px;">
+			<img src="./data/samples/ablation_study/inputs.svg" style="width: 100%;">
+			<div style="width: 24.5%; min-width: 200px;">
+				<video src="./data/samples/ablation_study/0_use_clip.mp4" loop playsinline autoPlay muted style="width: 100%; border-radius: 1vmin;"></video>
+				<p class="responsive-text-context">Use CLIP <sup>[1]</sup></p>
+			</div>
+			<div style="width: 24.5%; min-width: 200px;">
+				<video src="./data/samples/ablation_study/1_no_word_token.mp4" loop playsinline autoPlay muted style="width: 100%; border-radius: 1vmin;"></video>
+				<p class="responsive-text-context">No word token <sup>[2]</sup></p>
+			</div>
+			<div style="width: 24.5%; min-width: 200px;">
+				<video src="./data/samples/ablation_study/2_no_augmentations.mp4" loop playsinline autoPlay muted style="width: 100%; border-radius: 1vmin;"></video>
+				<p class="responsive-text-context">No augmentations <sup>[3]</sup></p>
+			</div>
+			<div style="width: 24.5%; min-width: 200px;">
+				<video src="./data/samples/ablation_study/3_videoalchemy.mp4" loop playsinline autoPlay muted style="width: 100%; border-radius: 1vmin;"></video>
+				<p class="responsive-text-context"><em>VideoAlchemy</em></p>
+			</div>
+		</div>
+	</div>
+
+	<hr class="mt-5">
+	
+	<div class="responsive-text-footnote container text-center" style="margin-top: 60px; color: #79797d;">
+		Copyright &#169; 2024 Snap Inc. All rights reserved. This dataset and code is made available by Snap Inc. for non-commercial, research purposes only. Non-commercial means not primarily intended for or directed towards commercial advantage or monetary compensation. Research purposes mean solely for study, instruction, or non-commercial research, testing or validation. No commercial license, whether implied or otherwise, is granted in or to this dataset and code, unless you have entered into a separate agreement with Snap Inc. for such rights. This dataset and code is provided as-is, without warranty of any kind, express or implied, including any warranties of merchantability, title, fitness for a particular purpose, non-infringement, or that the code is free of defects, errors or viruses. In no event will Snap Inc. be liable for any damages or losses of any kind arising from this dataset and code or your use thereof. Any redistribution of this dataset and code must retain or reproduce the above copyright notice, conditions and disclaimer.
+	</div>
+
+	<script>
+        // Set the default selected values for each set
+        const selectedImages = { 1: 2, 2: 2, 3: 2 };
+
+        // Handles image selection
+        function selectImage(img) {
+            const set = img.getAttribute("data-set");
+            const index = img.getAttribute("data-index");
+
+            // Deselect all images in the current set
+            const images = document.querySelectorAll(`[data-set="${set}"]`);
+            images.forEach(image => image.classList.remove("selected"));
+
+            // Select the clicked image
+            img.classList.add("selected");
+
+            // Update the selectedImages object for the current set
+            selectedImages[set] = index;
+
+            // Reset the other sets to the default value of 2
+            Object.keys(selectedImages).forEach(key => {
+                if (key !== set) {
+                    selectedImages[key] = 2;
+
+                    // Reset selection visually for other sets
+                    const otherImages = document.querySelectorAll(`[data-set="${key}"]`);
+                    otherImages.forEach(image => image.classList.remove("selected"));
+                    const defaultImage = document.querySelector(`[data-set="${key}"][data-index="2"]`);
+                    if (defaultImage) {
+                        defaultImage.classList.add("selected");
+                    }
+                }
+            });
+
+            // Update the video based on the new selections
+            const videoWrapper = document.getElementById("video-wrapper");
+            const videoElement = document.getElementById("video-id");
+            const textElement = document.getElementById("text-id");
+
+            if (selectedImages[1] == 1 && selectedImages[2] == 2 && selectedImages[3] == 2) {
+                videoElement.src = `./data/samples/ablate_person/0_no_image.mp4`;
+                textElement.innerHTML = `"A man pets a <span style="color:#68a74d">dog</span> on <span style="color:#efc235">sea ice</span>."`;
+            } else if (selectedImages[1] == 2 && selectedImages[2] == 2 && selectedImages[3] == 2) {
+                videoElement.src = `./data/samples/ablate_person/1_yoshua_bengio.mp4`;
+                textElement.innerHTML = `"A <span style="color:#3e76d9">man</span> pets a <span style="color:#68a74d">dog</span> on <span style="color:#efc235">sea ice</span>."`;
+            } else if (selectedImages[1] == 3 && selectedImages[2] == 2 && selectedImages[3] == 2) {
+                videoElement.src = `./data/samples/ablate_person/2_geoffrey_hinton.mp4`;
+                textElement.innerHTML = `"A <span style="color:#3e76d9">man</span> pets a <span style="color:#68a74d">dog</span> on <span style="color:#efc235">sea ice</span>."`;
+            } else if (selectedImages[1] == 4 && selectedImages[2] == 2 && selectedImages[3] == 2) {
+                videoElement.src = `./data/samples/ablate_person/3_yann_lecun.mp4`;
+                textElement.innerHTML = `"A <span style="color:#3e76d9">man</span> pets a <span style="color:#68a74d">dog</span> on <span style="color:#efc235">sea ice</span>."`;
+            } else if (selectedImages[1] == 5 && selectedImages[2] == 2 && selectedImages[3] == 2) {
+                videoElement.src = `./data/samples/ablate_person/4_sora.mp4`;
+                textElement.innerHTML = `"A <span style="color:#3e76d9">woman</span> pets a <span style="color:#68a74d">dog</span> on <span style="color:#efc235">sea ice</span>."`;
+            } else if (selectedImages[1] == 6 && selectedImages[2] == 2 && selectedImages[3] == 2) {
+                videoElement.src = `./data/samples/ablate_person/5_dalle.mp4`;
+                textElement.innerHTML = `"A <span style="color:#3e76d9">woman</span> pets a <span style="color:#68a74d">dog</span> on <span style="color:#efc235">sea ice</span>."`;
+            } else if (selectedImages[1] == 2 && selectedImages[2] == 1 && selectedImages[3] == 2) {
+                videoElement.src = `./data/samples/ablate_dog/0_no_image.mp4`;
+                textElement.innerHTML = `"A <span style="color:#3e76d9">man</span> pets a <span style="color:#68a74d">dog</span> on <span style="color:#efc235">sea ice</span>."`;
+            } else if (selectedImages[1] == 2 && selectedImages[2] == 2 && selectedImages[3] == 2) {
+                videoElement.src = `./data/samples/ablate_dog/1_shiba_inu.mp4`;
+                textElement.innerHTML = `"A <span style="color:#3e76d9">man</span> pets a <span style="color:#68a74d">dog</span> on <span style="color:#efc235">sea ice</span>."`;
+            } else if (selectedImages[1] == 2 && selectedImages[2] == 3 && selectedImages[3] == 2) {
+                videoElement.src = `./data/samples/ablate_dog/2_golden_retriever.mp4`;
+                textElement.innerHTML = `"A <span style="color:#3e76d9">man</span> pets a <span style="color:#68a74d">dog</span> on <span style="color:#efc235">sea ice</span>."`;
+            } else if (selectedImages[1] == 2 && selectedImages[2] == 4 && selectedImages[3] == 2) {
+                videoElement.src = `./data/samples/ablate_dog/3_german_shepherd.mp4`;
+                textElement.innerHTML = `"A <span style="color:#3e76d9">man</span> pets a <span style="color:#68a74d">dog</span> on <span style="color:#efc235">sea ice</span>."`;
+            } else if (selectedImages[1] == 2 && selectedImages[2] == 5 && selectedImages[3] == 2) {
+                videoElement.src = `./data/samples/ablate_dog/4_husky.mp4`;
+                textElement.innerHTML = `"A <span style="color:#3e76d9">man</span> pets a <span style="color:#68a74d">dog</span> on <span style="color:#efc235">sea ice</span>."`;
+            } else if (selectedImages[1] == 2 && selectedImages[2] == 6 && selectedImages[3] == 2) {
+                videoElement.src = `./data/samples/ablate_dog/5_samoyed.mp4`;
+                textElement.innerHTML = `"A <span style="color:#3e76d9">man</span> pets a <span style="color:#68a74d">dog</span> on <span style="color:#efc235">sea ice</span>."`;
+            } else if (selectedImages[1] == 2 && selectedImages[2] == 1 && selectedImages[3] == 2) {
+                videoElement.src = `./data/samples/ablate_background/1_sea_ice.mp4`;
+                textElement.innerHTML = `"A <span style="color:#3e76d9">man</span> pets a <span style="color:#68a74d">dog</span> on <span style="color:#efc235">sea ice</span>."`;
+            } else if (selectedImages[1] == 2 && selectedImages[2] == 2 && selectedImages[3] == 1) {
+                videoElement.src = `./data/samples/ablate_background/0_no_image.mp4`;
+                textElement.innerHTML = `"A  <span style="color:#3e76d9">man</span> pets a <span style="color:#68a74d">dog</span>."`;
+            } else if (selectedImages[1] == 2 && selectedImages[2] == 2 && selectedImages[3] == 2) {
+                videoElement.src = `./data/samples/ablate_background/1_sea_ice.mp4`;
+                textElement.innerHTML = `"A <span style="color:#3e76d9">man</span> pets a <span style="color:#68a74d">dog</span> on <span style="color:#efc235">sea ice</span>."`;
+            } else if (selectedImages[1] == 2 && selectedImages[2] == 2 && selectedImages[3] == 3) {
+                videoElement.src = `./data/samples/ablate_background/2_beach.mp4`;
+                textElement.innerHTML = `"A <span style="color:#3e76d9">man</span> pets a <span style="color:#68a74d">dog</span> on <span style="color:#efc235">beach</span>."`;
+            } else if (selectedImages[1] == 2 && selectedImages[2] == 2 && selectedImages[3] == 4) {
+                videoElement.src = `./data/samples/ablate_background/3_london.mp4`;
+                textElement.innerHTML = `"A <span style="color:#3e76d9">man</span> pets a <span style="color:#68a74d">dog</span> on <span style="color:#efc235">bridge</span>."`;
+            } else if (selectedImages[1] == 2 && selectedImages[2] == 2 && selectedImages[3] == 5) {
+                videoElement.src = `./data/samples/ablate_background/4_desert.mp4`;
+                textElement.innerHTML = `"A <span style="color:#3e76d9">man</span> pets a <span style="color:#68a74d">dog</span> on <span style="color:#efc235">desert</span>."`;
+            } else if (selectedImages[1] == 2 && selectedImages[2] == 2 && selectedImages[3] == 6) {
+                videoElement.src = `./data/samples/ablate_background/5_moon_surface.mp4`;
+                textElement.innerHTML = `"A <span style="color:#3e76d9">man</span> pets a <span style="color:#68a74d">dog</span> on <span style="color:#efc235">Moon's surface</span>."`;
+            }
+
+            // Update video source and load
+            videoElement.load();
+			videoElement.play();
+        }
+
+		// Track the current condition for each sample
+		var currentConditions = { 1: 3, 2: 3, 3: 3, 4: 3 };
+		
+		function changeCondition(sampleId, change) {
+			// Update currentConditions
+			change = (change === -1) ? 3 : change;
+			currentConditions[sampleId] = (currentConditions[sampleId] + change) % 4;
+
+			// Update video and text source
+			const textConditionElements = document.querySelectorAll(`#text-condition-set-${sampleId}`);
+			textConditionElements.forEach((textConditionElement) => {
+				if (textConditionElement) {
+					textConditionElement.innerHTML = `${currentConditions[sampleId]} conditional subjects`;
+				}
+			});
+
+			const videoElements = document.querySelectorAll(`#video-set-${sampleId}`);
+			videoElements.forEach((videoElement) => {
+				if (videoElement) {
+					videoElement.src = `./data/samples/multi_subject_${getSampleType(parseInt(sampleId))}/${currentConditions[sampleId]}_conditions.mp4`;
+					videoElement.load();
+					videoElement.play();
+				}
+			});
+
+			const textPromptElements = document.querySelectorAll(`#text-prompt-set-${sampleId}`);
+			textPromptElements.forEach((textPromptElement) => {
+				if (parseInt(sampleId) == 1 && currentConditions[sampleId] == 0) {
+					textPromptElement.innerHTML = `"A woman rides a dinosaur on a field."`;
+				} else if (parseInt(sampleId) == 1 && currentConditions[sampleId] == 1) {
+					textPromptElement.innerHTML = `"A <span style="color:#3e76d9">woman</span> rides an animal."`;
+				} else if (parseInt(sampleId) == 1 && currentConditions[sampleId] == 2) {
+					textPromptElement.innerHTML = `"A <span style="color:#3e76d9">woman</span> rides a <span style="color:#68a74d">dinosaur</span>."`;
+				} else if (parseInt(sampleId) == 1 && currentConditions[sampleId] == 3) {
+					textPromptElement.innerHTML = `"A <span style="color:#3e76d9">woman</span> rides a <span style="color:#68a74d">dinosaur</span> on a <span style="color:#efc235">field</span>."`;
+				} else if (parseInt(sampleId) == 2 && currentConditions[sampleId] == 0) {
+					textPromptElement.innerHTML = `"A man and a woman discuss something in a meeting room."`;
+				} else if (parseInt(sampleId) == 2 && currentConditions[sampleId] == 1) {	
+					textPromptElement.innerHTML = `"A <span style="color:#3e76d9">man</span> and a woman discuss something."`;
+				} else if (parseInt(sampleId) == 2 && currentConditions[sampleId] == 2) {
+					textPromptElement.innerHTML = `"A <span style="color:#3e76d9">man</span> and a <span style="color:#68a74d">woman</span> discuss something."`;
+				} else if (parseInt(sampleId) == 2 && currentConditions[sampleId] == 3) {
+					textPromptElement.innerHTML = `"A <span style="color:#3e76d9">man</span> and a <span style="color:#68a74d">woman</span> discuss something in a <span style="color:#efc235">meeting room</span>."`;
+				} else if (parseInt(sampleId) == 2 && currentConditions[sampleId] == 0) {
+					textPromptElement.innerHTML = `"A woman in a suit sits in a living room and drinks tea."`;;
+				} else if (parseInt(sampleId) == 3 && currentConditions[sampleId] == 0) {
+					textPromptElement.innerHTML = `"A woman in a suit sits in a living room and drinks tea."`;
+				} else if (parseInt(sampleId) == 3 && currentConditions[sampleId] == 1) {
+					textPromptElement.innerHTML = `"A <span style="color:#3e76d9">woman</span> in a suit drinks tea."`;
+				} else if (parseInt(sampleId) == 3 && currentConditions[sampleId] == 2) {
+					textPromptElement.innerHTML = `"A <span style="color:#3e76d9">woman</span> in a <span style="color:#68a74d">suit</span> drinks tea."`;
+				} else if (parseInt(sampleId) == 3 && currentConditions[sampleId] == 3) {
+					textPromptElement.innerHTML = `"A <span style="color:#3e76d9">woman</span> in a <span style="color:#68a74d">suit</span> sits in a <span style="color:#efc235">living room</span> and drinks tea."`;
+				} else if (parseInt(sampleId) == 4 && currentConditions[sampleId] == 0) {
+					textPromptElement.innerHTML = `"A rocket launches from the Moon’s surface with a UFO behind."`;
+				} else if (parseInt(sampleId) == 4 && currentConditions[sampleId] == 1) {
+					textPromptElement.innerHTML = `"A <span style="color:#3e76d9">rocket</span> launches."`;
+				} else if (parseInt(sampleId) == 4 && currentConditions[sampleId] == 2) {
+					textPromptElement.innerHTML = `"A <span style="color:#3e76d9">rocket</span> launches from the <span style="color:#efc235">Moon’s surface</span>."`;
+				} else if (parseInt(sampleId) == 4 && currentConditions[sampleId] == 3) {
+					textPromptElement.innerHTML = `"A <span style="color:#3e76d9">rocket</span> launches from the <span style="color:#efc235">Moon’s surface</span> with a <span style="color:#68a74d">UFO</span> behind."`;
+				}
+			});
+		}
+
+		function getSampleType(sampleId) {
+			// Map sample IDs to their respective video folder types
+			switch (sampleId) {
+				case 1: return "dinosaur";
+				case 2: return "discuss";
+				case 3: return "drink_tea";
+				case 4: return "rocket";
+				default: return "";
+			}
+		}
+
+		function updateFontSizeForClass(className) {
+			var elements = document.getElementsByClassName(className);
+			var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+			if (className == "responsive-text-title") {
+				for (var i = 0; i < elements.length; i++) {
+					elements[i].style.fontWeight = "600";
+					if (screenWidth < 600) {
+						elements[i].style.fontSize = "1.55rem";
+					} else if (screenWidth < 800) {
+						elements[i].style.fontSize = "1.7rem";
+					} else if (screenWidth < 1000) {
+						elements[i].style.fontSize = "1.85rem";
+					} else {
+						elements[i].style.fontSize = "2.0rem";
+					}
+				}
+			}
+			else if (className == "responsive-text-context") {
+				for (var i = 0; i < elements.length; i++) {
+					// Adjust the threshold and font size as needed
+					if (screenWidth < 600) {
+						elements[i].style.fontSize = "13.5px";
+						elements[i].style.fontWeight = "375";
+					} else if (screenWidth < 800) {
+						elements[i].style.fontSize = "15px";
+						elements[i].style.fontWeight = "350";
+					} else if (screenWidth < 1000) {
+						elements[i].style.fontSize = "16.5px";
+						elements[i].style.fontWeight = "325";
+					} else {
+						elements[i].style.fontSize = "18px";
+						elements[i].style.fontWeight = "300";
+					}
+				}
+			}
+			else if (className == "responsive-text-prompt") {
+				for (var i = 0; i < elements.length; i++) {
+					// Adjust the threshold and font size as needed
+					if (screenWidth < 600) {
+						elements[i].style.fontSize = "9.5px";
+					} else if (screenWidth < 800) {
+						elements[i].style.fontSize = "11px";
+					} else if (screenWidth < 1000) {
+						elements[i].style.fontSize = "12.5px";
+					} else {
+						elements[i].style.fontSize = "14px";
+					}
+				}
+			}
+			else if (className == "responsive-text-footnote") {
+				for (var i = 0; i < elements.length; i++) {
+					// Adjust the threshold and font size as needed
+					if (screenWidth < 600) {
+						elements[i].style.fontSize = "8.5px";
+					} else if (screenWidth < 800) {
+						elements[i].style.fontSize = "10px";
+					} else if (screenWidth < 1000) {
+						elements[i].style.fontSize = "11.5px";
+					} else {
+						elements[i].style.fontSize = "13px";
+					}
+					elements[i].style.fontWeight = "200";
+				}
+			}
+		}
+
+		// Call the function on page load and window resize
+		window.onload = function() {
+			updateFontSizeForClass("responsive-text-title");
+			updateFontSizeForClass("responsive-text-context");
+			updateFontSizeForClass("responsive-text-prompt");
+			updateFontSizeForClass("responsive-text-footnote");
+		};
+		window.onresize = function() {
+			updateFontSizeForClass("responsive-text-title");
+			updateFontSizeForClass("responsive-text-context");
+			updateFontSizeForClass("responsive-text-prompt");
+			updateFontSizeForClass("responsive-text-footnote");
+		};
+	</script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.2/js/bootstrap.min.js'></script>
+	<script src="./assets/index.js"></script>
+
+</body>
+</html>
