@@ -224,6 +224,7 @@ python prepare_conditional_prompts_and_images_list.py
 <a name="step5"></a>
 ### Step 5: Generate videos and collect ground truth embeddings (optional)
 - Use [VideoBooth](https://github.com/Vchitect/VideoBooth) as example to demo how to generate videos using the conditional inputs of *MSRVTT-Personalization*
+  - The generated videos will be stored in the `demo/VideoBooth/msrvtt_personalization_subject_mode/outputs` folder by default.
 ```
 conda activate videobooth
 cd ../demo/VideoBooth
