@@ -1,7 +1,6 @@
-# ⚗️ VideoAlchemy
-This is the offical Github repository of VideoAlchemy.
+# MSRVTT-Personalization
 
-**[VideoAlchemy: Open-set Personalization in Video Generation](https://snap-research.github.io/VideoAlchemy)**
+**[Multi-subject Open-set Personalization in Video Generation](https://snap-research.github.io/VideoAlchemy)**
 </br>
 [Tsai-Shien Chen](https://tsaishien-chen.github.io/),
 [Aliaksandr Siarohin](https://aliaksandrsiarohin.github.io/aliaksandr-siarohin-website/),
@@ -15,11 +14,10 @@ This is the offical Github repository of VideoAlchemy.
 [Sergey Tulyakov](http://www.stulyakov.com/)
 </br>
 
-[![arXiv](https://img.shields.io/badge/arXiv-2412.xxxxx-b31b1b.svg)](https://arxiv.org/abs/2412.xxxxx)
+[![arXiv](https://img.shields.io/badge/arXiv-2501.00000-b31b1b.svg)](https://arxiv.org/abs/2501.00000)
 [![Project Page](https://img.shields.io/badge/Project-Website-green)](https://snap-research.github.io/VideoAlchemy)
 
-# Introduction
-We introduce *MSRVTT-Personalization*, a new benchmark for the task of personalization. It aims at accurate subject fidelity assessment and supports various conditioning modes, including conditioning on face crops, conditioning on single or multiple arbitrary subjects, and conditioning on foreground objects and background.
+In this paper, we introduce *MSRVTT-Personalization*, a new benchmark for the task of personalization. It aims at accurate subject fidelity assessment and supports various conditioning modes, including conditioning on face crops, conditioning on single or multiple arbitrary subjects, and conditioning on foreground objects and background.
 
 We include the testing dataset and evaluation protocol in this repository. We show a test sample of *MSRVTT-Personalization* below:
 <table class="center">
