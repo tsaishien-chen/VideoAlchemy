@@ -262,10 +262,10 @@ To add
 If you find this project useful for your research, please cite our paper. :blush:
 
 ```bibtex
-@inproceedings{chen2024videoalchemy,
-  title   = {VideoAlchemy: Open-set Personalization in Video Generation},
+@inproceedings{chen2025dreamalchemist,
+  title   = {Multi-subject Open-set Personalization in Video Generation},
   author  = {Chen, Tsai-Shien and Siarohin, Aliaksandr and Menapace, Willi and Fang, Yuwei and Lee, Kwot Sin and Skorokhodov, Ivan and Aberman, Kfir and Zhu, Jun-Yan and Yang, Ming-Hsuan and Tulyakov, Sergey},
-  journal = {arXiv preprint arXiv:2412.xxxxx},
+  journal = {arXiv preprint arXiv:2501.00000},
   year    = {2024}
 }
 ```
