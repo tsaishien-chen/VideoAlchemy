@@ -74,7 +74,7 @@ We include the testing dataset and evaluation protocol in this repository. We sh
         <td width=15.9%  style="border: none"><a href="https://github.com/csyxwei/ELITE">ELITE</a></td>
         <td width=15.9%  style="border: none"><a href="https://github.com/Vchitect/VideoBooth">VideoBooth</a></td>
         <td width=15.9%  style="border: none"><a href="https://github.com/ali-vilab/VGen">DreamVideo</a></td>
-        <td width=28.25% style="border: none"><em>VideoAlchemy</em></td>
+        <td width=28.25% style="border: none"><em>DreamAlchemist</em></td>
         <td width=21.2%  style="border: none">Ground Truth</td>
       </tr>
     </table>
@@ -95,7 +95,7 @@ We include the testing dataset and evaluation protocol in this repository. We sh
         <td width=23.62% style="border: none"><a href="https://github.com/tencent-ailab/IP-Adapter">IP-Adapter</a></td>
         <td width=13.3%  style="border: none"><a href="https://github.com/TencentARC/PhotoMaker">PhotoMaker</a></td>
         <td width=13.3%  style="border: none"><a href="https://github.com/Zhen-Dong/Magic-Me">Magic-Me</a></td>
-        <td width=23.62% style="border: none"><em>VideoAlchemy</em></td>
+        <td width=23.62% style="border: none"><em>DreamAlchemist</em></td>
         <td width=23.62% style="border: none">Ground Truth</td>
       </tr>
     </table>
