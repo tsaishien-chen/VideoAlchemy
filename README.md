@@ -41,7 +41,7 @@ We include the testing dataset and evaluation protocol in this repository. We sh
   - Dynamic degree (Dync-D)
 
 - Quantitative evaluation:
-  - Subject mode of *MSRVTT-Personalization* (inputs an entire subject image as the condition)
+  - Subject mode of *MSRVTT-Personalization* (condition on an entire subject image)
     | Method | Text-S | Vid-S | Subj-S | Dync-D |
     |--------|--------|-------|--------|--------|
     | [ELITE](https://github.com/csyxwei/ELITE)            | 0.245     | 0.620     | 0.359     | -         |
@@ -49,7 +49,7 @@ We include the testing dataset and evaluation protocol in this repository. We sh
     | [DreamVideo](https://github.com/ali-vilab/VGen)      | 0.261     | 0.611     | 0.310     | 0.311     |
     | *DreamAlchemist*                                     | **0.269** | **0.732** | **0.617** | **0.466** |
 
-  - Face mode of *MSRVTT-Personalization* (inputs a face crop image as the condition)
+  - Face mode of *MSRVTT-Personalization* (condition on a face crop image)
     | Method | Text-S | Vid-S | Face-S | Dync-D |
     |--------|--------|-------|--------|--------|
     | [IP-Adapter](https://github.com/tencent-ailab/IP-Adapter) | 0.251     | 0.648     | 0.269     | -         |
