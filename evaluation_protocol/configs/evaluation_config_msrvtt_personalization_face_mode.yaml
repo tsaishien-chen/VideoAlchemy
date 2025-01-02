@@ -5,4 +5,3 @@ evaluator:
     - target: !module evaluation.evaluators.video_clip_similarity_video_evaluator.VideoClipSimilarityVideoEvaluator
     - target: !module evaluation.evaluators.arcface_similarity_video_evaluator.ArcfaceSimilarityVideoEvaluator
     - target: !module evaluation.evaluators.dynamic_degree_video_evaluator.DynamicDegreeVideoEvaluator
-    - target: !module evaluation.evaluators.temporal_consistency_video_evaluator.TemporalConsistencyVideoEvaluator

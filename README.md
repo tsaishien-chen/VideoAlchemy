@@ -33,30 +33,29 @@ We include the testing dataset and evaluation protocol in this repository. We sh
 <sup>**We will remove video samples from Github / project webpage / technical presentation as long as you need it. Please contact tsaishienchen at gmail dot com for the request.</sup>
 
 # Leaderboard
-- *MSRVTT-Personalization* evaluates a model across six metrics:
+- *MSRVTT-Personalization* evaluates a model across five metrics:
   - Text similarity (Text-S)
   - Video similarity (Vid-S)
   - Subject similarity (Subj-S)
   - Face similarity (Face-S)
   - Dynamic degree (Dync-D)
-  - Temporal consistency (T-Cons)
 
 - Quantitative evaluation:
   - Subject mode of *MSRVTT-Personalization* (inputs an entire subject image as the condition)
-    | Method | Text-S | Vid-S | Subj-S | Dync-D | T-Cons |
-    |--------|--------|-------|--------|--------|--------|
-    | [ELITE](https://github.com/csyxwei/ELITE)            | 0.245     | 0.620     | 0.359     | -         | -         |
-    | [VideoBooth](https://github.com/Vchitect/VideoBooth) | 0.222     | 0.612     | 0.395     | 0.448     | 0.963     |
-    | [DreamVideo](https://github.com/ali-vilab/VGen)      | 0.261     | 0.611     | 0.310     | 0.311     | 0.956     |
-    | *VideoAlchemy*                                       | **0.269** | **0.732** | **0.617** | **0.466** | **0.993** |
+    | Method | Text-S | Vid-S | Subj-S | Dync-D |
+    |--------|--------|-------|--------|--------|
+    | [ELITE](https://github.com/csyxwei/ELITE)            | 0.245     | 0.620     | 0.359     | -         |
+    | [VideoBooth](https://github.com/Vchitect/VideoBooth) | 0.222     | 0.612     | 0.395     | 0.448     |
+    | [DreamVideo](https://github.com/ali-vilab/VGen)      | 0.261     | 0.611     | 0.310     | 0.311     |
+    | *VideoAlchemy*                                       | **0.269** | **0.732** | **0.617** | **0.466** |
 
   - Face mode of *MSRVTT-Personalization* (inputs a face crop image as the condition)
-    | Method | Text-S | Vid-S | Face-S | Dync-D | T-Cons |
-    |--------|--------|-------|--------|--------|--------|
-    | [IP-Adapter](https://github.com/tencent-ailab/IP-Adapter) | 0.251     | 0.648     | 0.269     | -         | -         |
-    | [PhotoMaker](https://github.com/TencentARC/PhotoMaker)    | **0.278** | 0.569     | 0.189     | -         | -         |
-    | [Magic-Me](https://github.com/Zhen-Dong/Magic-Me)         | 0.251     | 0.602     | 0.135     | 0.418     | 0.974     |
-    | *VideoAlchemy*                                            | 0.273     | **0.687** | **0.382** | **0.424** | **0.994** |
+    | Method | Text-S | Vid-S | Face-S | Dync-D |
+    |--------|--------|-------|--------|--------|
+    | [IP-Adapter](https://github.com/tencent-ailab/IP-Adapter) | 0.251     | 0.648     | 0.269     | -         |
+    | [PhotoMaker](https://github.com/TencentARC/PhotoMaker)    | **0.278** | 0.569     | 0.189     | -         |
+    | [Magic-Me](https://github.com/Zhen-Dong/Magic-Me)         | 0.251     | 0.602     | 0.135     | 0.418     |
+    | *VideoAlchemy*                                            | 0.273     | **0.687** | **0.382** | **0.424** |
 
 - Qualitative evaluation:
   - Subject mode of *MSRVTT-Personalization*
@@ -83,14 +82,14 @@ We include the testing dataset and evaluation protocol in this repository. We sh
   - Face mode of *MSRVTT-Personalization*
     <table class="center">
       <tr>
-        <td width=100% colspan=5 style="border: none"><img src="./assets/msrvtt_face_27/inputs.svg"></td>
+        <td width=100% colspan=5 style="border: none"><img src="./assets/msrvtt_face/inputs.svg"></td>
       </tr>
       <tr style="text-align: center;">
-        <td width=23.62% style="border: none"><img src="./assets/msrvtt_face_27/0_IP-Adapter.gif"></td>
-        <td width=13.3%  style="border: none"><img src="./assets/msrvtt_face_27/1_PhotoMaker.gif"></td>
-        <td width=13.3%  style="border: none"><img src="./assets/msrvtt_face_27/2_Magic-Me.gif"></td>
-        <td width=23.62% style="border: none"><img src="./assets/msrvtt_face_27/3_VideoAlchemy.gif"></td>
-        <td width=23.62% style="border: none"><img src="./assets/msrvtt_face_27/4_Ground_Truth.gif"></td>
+        <td width=23.62% style="border: none"><img src="./assets/msrvtt_face/0_IP-Adapter.gif"></td>
+        <td width=13.3%  style="border: none"><img src="./assets/msrvtt_face/1_PhotoMaker.gif"></td>
+        <td width=13.3%  style="border: none"><img src="./assets/msrvtt_face/2_Magic-Me.gif"></td>
+        <td width=23.62% style="border: none"><img src="./assets/msrvtt_face/3_VideoAlchemy.gif"></td>
+        <td width=23.62% style="border: none"><img src="./assets/msrvtt_face/4_Ground_Truth.gif"></td>
       </tr>
       <tr style="text-align: center;">
         <td width=23.62% style="border: none"><a href="https://github.com/tencent-ailab/IP-Adapter">IP-Adapter</a></td>
