@@ -47,7 +47,7 @@ We include the testing dataset and evaluation protocol in this repository. We sh
     | [ELITE](https://github.com/csyxwei/ELITE)            | 0.245     | 0.620     | 0.359     | -         |
     | [VideoBooth](https://github.com/Vchitect/VideoBooth) | 0.222     | 0.612     | 0.395     | 0.448     |
     | [DreamVideo](https://github.com/ali-vilab/VGen)      | 0.261     | 0.611     | 0.310     | 0.311     |
-    | *VideoAlchemy*                                       | **0.269** | **0.732** | **0.617** | **0.466** |
+    | *DreamAlchemist*                                     | **0.269** | **0.732** | **0.617** | **0.466** |
 
   - Face mode of *MSRVTT-Personalization* (inputs a face crop image as the condition)
     | Method | Text-S | Vid-S | Face-S | Dync-D |
@@ -55,7 +55,7 @@ We include the testing dataset and evaluation protocol in this repository. We sh
     | [IP-Adapter](https://github.com/tencent-ailab/IP-Adapter) | 0.251     | 0.648     | 0.269     | -         |
     | [PhotoMaker](https://github.com/TencentARC/PhotoMaker)    | **0.278** | 0.569     | 0.189     | -         |
     | [Magic-Me](https://github.com/Zhen-Dong/Magic-Me)         | 0.251     | 0.602     | 0.135     | 0.418     |
-    | *VideoAlchemy*                                            | 0.273     | **0.687** | **0.382** | **0.424** |
+    | *DreamAlchemist*                                          | 0.273     | **0.687** | **0.382** | **0.424** |
 
 - Qualitative evaluation:
   - Subject mode of *MSRVTT-Personalization*
@@ -67,7 +67,7 @@ We include the testing dataset and evaluation protocol in this repository. We sh
         <td width=15.9%  style="border: none"><img src="./assets/msrvtt_horse/0_ELITE.gif"></td>
         <td width=15.9%  style="border: none"><img src="./assets/msrvtt_horse/1_VideoBooth.gif"></td>
         <td width=15.9%  style="border: none"><img src="./assets/msrvtt_horse/2_DreamVideo.gif"></td>
-        <td width=28.25% style="border: none"><img src="./assets/msrvtt_horse/3_VideoAlchemy.gif"></td>
+        <td width=28.25% style="border: none"><img src="./assets/msrvtt_horse/3_DreamAlchemist.gif"></td>
         <td width=21.2%  style="border: none"><img src="./assets/msrvtt_horse/4_Ground_Truth.gif"></td>
       </tr>
       <tr style="text-align: center;">
@@ -88,7 +88,7 @@ We include the testing dataset and evaluation protocol in this repository. We sh
         <td width=23.62% style="border: none"><img src="./assets/msrvtt_face/0_IP-Adapter.gif"></td>
         <td width=13.3%  style="border: none"><img src="./assets/msrvtt_face/1_PhotoMaker.gif"></td>
         <td width=13.3%  style="border: none"><img src="./assets/msrvtt_face/2_Magic-Me.gif"></td>
-        <td width=23.62% style="border: none"><img src="./assets/msrvtt_face/3_VideoAlchemy.gif"></td>
+        <td width=23.62% style="border: none"><img src="./assets/msrvtt_face/3_DreamAlchemist.gif"></td>
         <td width=23.62% style="border: none"><img src="./assets/msrvtt_face/4_Ground_Truth.gif"></td>
       </tr>
       <tr style="text-align: center;">
@@ -105,7 +105,7 @@ We include the testing dataset and evaluation protocol in this repository. We sh
 - [Step 1: Download videos and annotations](#step1)
 - [Step 2: Download model checkpoints](#step2)
 - [Step 3: Build environments](#step3)
-- [Step 4: Prepare *MSRVTT-Personalization* dataset ](#step4)
+- [Step 4: Prepare *MSRVTT-Personalization* dataset](#step4)
 - [Step 5: Generate videos and collect ground truth embeddings (optional)](#step5)
 - [Step 6: Run evaluation](#step6)
 
